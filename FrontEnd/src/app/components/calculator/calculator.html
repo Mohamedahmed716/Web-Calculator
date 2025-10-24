@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angular Web Calculator</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <table class="calculator">
+    <!-- Display -->
+    <tr class="display">
+      <td colspan="4">
+        <div class="preview">{{ previewDisplay }}</div>
+        <div class="displayscreen">{{ display }}</div>
+      </td>
+    </tr>
+
+
+    <!-- Settings row 1 -->
+    <tr class="settings">
+      <td (click)="onCellClick('%')">%</td>
+      <td (click)="onCellClick('CE')" class="remove">CE</td>
+      <td (click)="onCellClick('C')" class="remove">C</td>
+      <td (click)="onCellClick('backspace')">
+        <i class="fa-regular fa-rectangle-xmark"></i>
+      </td>
+    </tr>
+
+    <!-- Settings row 2 -->
+    <tr class="settings">
+      <td (click)="onCellClick('reciprocal')">1/𝑥</td>
+      <td (click)="onCellClick('square')">𝑥<sup>2</sup></td>
+      <td (click)="onCellClick('sqrt')">
+        <i class="fa-solid fa-square-root-variable"></i>
+      </td>
+      <td (click)="onCellClick('/')">
+        <i class="fa-solid fa-divide"></i>
+      </td>
+    </tr>
+
+    <!-- Number & operator rows -->
+    <tr>
+      <td (click)="onCellClick('7')">7</td>
+      <td (click)="onCellClick('8')">8</td>
+      <td (click)="onCellClick('9')">9</td>
+      <td (click)="onCellClick('*')" class="operator">
+        <i class="fa-solid fa-xmark"></i>
+      </td>
+    </tr>
+    <tr>
+      <td (click)="onCellClick('4')">4</td>
+      <td (click)="onCellClick('5')">5</td>
+      <td (click)="onCellClick('6')">6</td>
+      <td (click)="onCellClick('-')" class="operator">
+        <i class="fa-solid fa-minus"></i>
+      </td>
+    </tr>
+    <tr>
+      <td (click)="onCellClick('1')">1</td>
+      <td (click)="onCellClick('2')">2</td>
+      <td (click)="onCellClick('3')">3</td>
+      <td (click)="onCellClick('+')" class="operator">
+        <i class="fa-solid fa-plus"></i>
+      </td>
+    </tr>
+    <tr>
+      <td (click)="onCellClick('negate')" class="operator">
+        <i class="fa-solid fa-plus-minus"></i>
+      </td>
+      <td (click)="onCellClick('0')">0</td>
+      <td (click)="onCellClick('.')">.</td>
+      <td (click)="onCellClick('=')" class="equals">
+        <i class="fa-solid fa-equals"></i>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
